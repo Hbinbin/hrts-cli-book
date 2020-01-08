@@ -1,0 +1,33 @@
+{
+  "title": "hrts-cli-book",
+  "author": "haobin",
+  "description": "hrts-cli使用说明",
+  "plugins": [
+    "search-pro",
+    "github",
+    "chapter-fold",
+    "pageview-count",
+    "back-to-top-button",
+    "code",
+    "emphasize",
+    "splitter",
+    "popup"
+  ],
+  "pluginsConfig": {
+    "github": {
+      "url": "https://github.com/Hbinbin/hrts-cli-book"
+    },
+    "page-copyright": {
+      "description": "modified at：",
+      "signature": "haobin",
+      "wisdom": "Designer, Frontend Developer & overall web enthusiast",
+      "format": "YYYY-MM-dd hh:mm:ss",
+      "copyright": "Copyright &#169; 郝彬",
+      "timeColor": "#666",
+      "copyrightColor": "#666",
+      "utcOffset": "8",
+      "style": "normal",
+      "noPowered": false
+    }
+  }
+}
