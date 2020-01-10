@@ -2,6 +2,10 @@
   "title": "hrts-cli-book",
   "author": "haobin",
   "description": "hrts-cli使用说明",
+  "language": "zh-hans",
+  "styles":{
+    "website": "./assets/styles/website.css"
+  },
   "plugins": [
     "search-pro",
     "github",
@@ -11,7 +15,8 @@
     "code",
     "emphasize",
     "splitter",
-    "popup"
+    "popup",
+    "sectionx"
   ],
   "pluginsConfig": {
     "github": {
