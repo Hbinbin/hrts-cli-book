@@ -6,4 +6,6 @@
   * [文件结构](book/template/file-structure.md)
 * [实用的typescript特性](book/typescript/typescript.md)
 * [webpack配置](book/webpack/webpack.md)
+* [其他](book/other.md)
+
 

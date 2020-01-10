@@ -1,57 +1,35 @@
-
-### TypeScript的基本语法
-
-#### 在window增加属性
+#### 1.配置模块的别名alias
 ```
-// 方法1：react-app-env.d.ts中直接增加window的接口（推荐）
-interface Window {
-  __REDUX_DEVTOOLS_EXTENSION__: Function;
-  __wxjs_environment: 'miniprogram' | 'browser';
-  ENV: any;
-  Config: any;
+// 1.webpack.config.js中增加方法和配置
+const resolvePath = function (dir) {
+  return path.join(__dirname, '..', dir)
 }
-// 方法2：index.tsx中增加全局window属性
-declare global {
-  interface Window {
-    __REDUX_DEVTOOLS_EXTENSION__: Function;
-    __wxjs_environment: any;
-    ENV: any;
-    Config: any;
-  }
+...
+alias: {
+  // 增加如下配置
+  '@cps': resolvePath('/src/components'),
+  '@cts': resolvePath('/src/containers'),
+  '@redux': resolvePath('/src/redux'),
+  '@utils': resolvePath('/src/utils')
 }
-```
-#### 对于插件没有ts包的
-```
-// 在react-app-env.d.ts中增加
-declare module 'react-lazy-load' {
-  const LazyLoad: any
-  export default LazyLoad
-}
-```
-#### 匿名函数的this
-```
-  // 回调中直接使用this会报错 'this 隐式具有类型 any，因为它没有类型注释'
-  // this必须作为回调的第一个参数传入，类型为：void | any
-  ele.addEventListener('touchmove', function(this: any,evt: any) {
-    console.log(this);
-  })
-```
-#### 对象、数组对象的表示
+...
 
+// 2.在tscongfig.json中compilerOptions中加
+...
+"baseUrl": "src",
+"paths": {
+  "@cps/*": [
+    "components/*"
+  ],
+  "@cts/*": [
+    "containers/*"
+  ],
+  "@redux/*": [
+    "redux/*"
+  ],
+  "@utils/*": [
+    "utils/*"
+  ]
+}
 ```
-  const obj: {
-    [key: string]: any
-  } = {}
-  const arrObj: {
-    [key: string]: any
-  }[] = []
-```
-#### setState
-```
-  type StateKey = keyof IState
-  handleChange = (key: StateKey, val: any) => {
-    this.setState({
-      [key]: val
-    } as Pick<IState, typeof key>)
-  }
-```
+#### 2.配置多页面入口

@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>开始 · hrts-cli-book</title>
+        <title>其他 · hrts-cli-book</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -85,10 +85,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="template/template.html" />
     
-    
-    <link rel="prev" href="../" />
+    <link rel="prev" href="webpack/webpack.html" />
     
 
     </head>
@@ -130,7 +128,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2" data-path="introduction.html">
+        <li class="chapter " data-level="1.2" data-path="introduction.html">
             
                 <a href="introduction.html">
             
@@ -201,7 +199,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6" data-path="other.html">
+        <li class="chapter active" data-level="1.6" data-path="other.html">
             
                 <a href="other.html">
             
@@ -244,7 +242,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >开始</a>
+        <a href=".." >其他</a>
     </h1>
 </div>
 
@@ -262,28 +260,42 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="hrts-cli&#x96C6;&#x6210;&#x4E86;react&#x9879;&#x76EE;&#x7684;&#x6700;&#x4F73;&#x5F00;&#x53D1;&#x5B9E;&#x8DF5;">hrts-cli&#x96C6;&#x6210;&#x4E86;react&#x9879;&#x76EE;&#x7684;&#x6700;&#x4F73;&#x5F00;&#x53D1;&#x5B9E;&#x8DF5;</h1>
-<p>&#x662F;&#x5728;create-react-app&#x521B;&#x5EFA;&#x7684;&#x9879;&#x76EE;&#x4E0B;&#x7684;&#x4E8C;&#x6B21;&#x5C01;&#x88C5;&#xFF0C;&#x5177;&#x4F53;&#x5982;&#x4E0B;&#xFF1A;</p>
-<h4 id="1-eslint&#x89C4;&#x5219;">1. eslint&#x89C4;&#x5219;</h4>
-<ul>
-<li><strong>javascript</strong>&#x8BED;&#x6CD5;&#x89C4;&#x5219;&#x4F7F;&#x7528;<strong>standard</strong>  </li>
-<li><strong>react</strong>&#x8BED;&#x6CD5;&#x89C4;&#x5219;&#x4F7F;&#x7528;<strong>standard-react</strong>  </li>
-<li><strong>typescript</strong>&#x8BED;&#x6CD5;&#x89C4;&#x5219;&#x4F7F;&#x7528;<strong>typescript-eslint</strong>  </li>
-</ul>
-<p><span class="pg-emphasize pg-emphasize-green" style="">&#x5B9A;&#x5236;&#x5316;&#x7684;&#x89C4;&#x5219;&#x89C1;&#x9879;&#x76EE;&#x6A21;&#x677F;&#x7684; <strong>.eslint.js</strong> &#x6587;&#x4EF6;</span><br>&#x5177;&#x4F53;&#x7684;&#x89C4;&#x5219;&#x53C2;&#x7167;&#x5BF9;&#x5E94;&#x7684;&#x63D2;&#x4EF6;&#x89C4;&#x5219;&#xFF0C;&#x4F20;&#x9001;&#x95E8;&#xFF1A;<a href="https://github.com/standard/standard/blob/master/docs/README-zhcn.md" target="_blank"><strong>standard</strong></a> 
-<a href="https://github.com/standard/eslint-config-standard-react" target="_blank"><strong>standard-react</strong></a> 
-<a href="https://github.com/typescript-eslint/typescript-eslint#readme" target="_blank"><strong>typescript-eslint</strong></a></p>
-<h4 id="2-webpack&#x914D;&#x7F6E;">2. webpack&#x914D;&#x7F6E;</h4>
-<p>&#x57FA;&#x672C;&#x6CBF;&#x7528; <code>npm run eject</code>&#x540E;&#x7684;webpack&#x914D;&#x7F6E;&#xFF0C;&#x8BE6;&#x7EC6;&#x914D;&#x7F6E;&#x89C1;&#xFF1A;<a href="README.md"><code>&#x524D;&#x8A00;</code>&#x7AE0;&#x8282;</a></p>
-<h4 id="3-&#x96C6;&#x6210;&#x7684;&#x63D2;&#x4EF6;">3. &#x96C6;&#x6210;&#x7684;&#x63D2;&#x4EF6;</h4>
-<ul>
-<li><strong>antd/antd-mobile</strong> UI&#x6846;&#x67B6;  </li>
-<li><strong>axios</strong> HTTP&#x5E93;  </li>
-<li><strong>immutability-helper</strong> &#x66F4;&#x597D;&#x7684;&#x64CD;&#x4F5C;&#x4E0D;&#x53EF;&#x53D8;&#x6570;&#x636E;&#x7684;&#x63D2;&#x4EF6;&#xFF0C;&#x4F8B;&#x5982;redux&#x4FEE;&#x6539;state&#xFF0C;&#x4FEE;&#x6539;&#x6DF1;&#x5C42;&#x5D4C;&#x5957;&#x7684;&#x6570;&#x636E;&#x65F6;  </li>
-<li><strong>reselect</strong> redux&#x7684;&#x4E2D;&#x95F4;&#x4EF6;&#xFF0C;&#x7F13;&#x5B58;redux&#x7684;&#x6570;&#x636E;&#xFF0C;&#x51CF;&#x5C11;&#x8BA1;&#x7B97;&#x548C;&#x6E32;&#x67D3;&#x538B;&#x529B;  </li>
-</ul>
-<p>&#x4F20;&#x9001;&#x95E8;&#xFF1A;<a href="https://ant.design/docs/react/introduce-cn" target="_blank"><strong>antd</strong></a> <a href="https://mobile.ant.design/docs/react/introduce-cn" target="_blank"><strong>antd-mobile</strong></a> <a href="http://www.axios-js.com/zh-cn/docs/" target="_blank"><strong>axios</strong></a> <a href="https://github.com/kolodny/immutability-helper#readme" target="_blank"><strong>immutability-helper</strong></a> <a href="https://github.com/reduxjs/reselect#readme" target="_blank"><strong>reselect</strong></a></p>
-
+                                <h4 id="1vconsole&#x8C03;&#x8BD5;&#x63D2;&#x4EF6;&#x7684;&#x5F15;&#x5165;">1.vconsole&#x8C03;&#x8BD5;&#x63D2;&#x4EF6;&#x7684;&#x5F15;&#x5165;</h4>
+<p><code>$ npm i vconsole --save-dev</code>
+&#x5728;&#x5165;&#x53E3;&#x6587;&#x4EF6;index.tsx&#x4E2D;import&#x4E14;&#x521B;&#x5EFA;vcosole&#x5B9E;&#x4F8B;</p>
+<pre><code>import VConsole from &apos;vconsole&apos;
+const vConsole = new VConsole()
+</code></pre><p>&#x5728;typescript&#x4E2D;&#x5F15;&#x5165;&#x4F1A;&#x62A5;&#x627E;&#x4E0D;&#x5230;&#x5BF9;&#x5E94;ts&#x7684;&#x6A21;&#x5757;&#xFF0C;&#x5728;react-app-env.d.ts&#x4E2D;&#x589E;&#x52A0;&#x5168;&#x5C40;&#x58F0;&#x660E;:  </p>
+<pre><code>declare module &apos;vconsole&apos;
+</code></pre><h4 id="2webpack&#x751F;&#x4EA7;&#x6253;&#x5305;&#x53BB;&#x9664;console&#x3001;debugger">2.webpack&#x751F;&#x4EA7;&#x6253;&#x5305;&#x53BB;&#x9664;console&#x3001;debugger</h4>
+<pre><code>// webpack&#x4E4B;&#x524D;&#x7684;&#x6253;&#x5305;&#x538B;&#x7F29;&#x63D2;&#x4EF6;&#x662F;uglifyjs-webpack-plugin&#xFF0C;&#x73B0;
+&#x5728;&#x6362;&#x6210;&#x4E86;terser-webpack-plugin
+// webpack.config.js&#x589E;&#x52A0;&#x5982;&#x4E0B;&#x4EE3;&#x7801;
+  new TerserPlugin({
+    terserOptions: {
+      ...somecode
+      compress: {
+        ecma: 5,
+        warnings: false,
+        comparisons: false,
+        inline: 2,
+        drop_debugger: true, // &#x53BB;&#x9664;&#x6240;&#x6709;&#x7684;debugger
+        drop_console: true // &#x53BB;&#x9664;&#x6240;&#x6709;&#x7684;console
+      },
+      ...somecode
+    },
+</code></pre><h4 id="3webpack&#x6253;&#x5305;&#x53BB;&#x9664;map&#x6587;&#x4EF6;">3.webpack&#x6253;&#x5305;&#x53BB;&#x9664;.map&#x6587;&#x4EF6;</h4>
+<pre><code>// &#x4FEE;&#x6539;webpack.config.js&#x4E2D;&#x7684;devtool&#x914D;&#x7F6E;
+devtool: isEnvProduction
+      ? shouldUseSourceMap
+        ? &apos;source-map&apos;
+        : false
+      : isEnvDevelopment &amp;&amp; &apos;cheap-module-source-map&apos;
+&#x6539;&#x4E3A;&#xFF1A;
+devtool: isEnvProduction
+      ? false
+      : isEnvDevelopment &amp;&amp; &apos;cheap-module-source-map&apos;
+</code></pre>
 <script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
                                 
                                 </section>
@@ -327,14 +339,10 @@
 
             
                 
-                <a href="../" class="navigation navigation-prev " aria-label="Previous page: 前言">
+                <a href="webpack/webpack.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: webpack配置">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="template/template.html" class="navigation navigation-next " aria-label="Next page: 模板架构">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -343,7 +351,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"开始","level":"1.2","depth":1,"next":{"title":"模板架构","level":"1.3","depth":1,"path":"book/template/template.md","ref":"book/template/template.md","articles":[{"title":"文件结构","level":"1.3.1","depth":2,"path":"book/template/file-structure.md","ref":"book/template/file-structure.md","articles":[]}]},"previous":{"title":"前言","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["search-pro","github","chapter-fold","pageview-count","back-to-top-button","code","emphasize","splitter","popup","sectionx","livereload"],"styles":{"website":"./assets/styles/website.css"},"pluginsConfig":{"chapter-fold":{},"emphasize":{},"github":{"url":"https://github.com/Hbinbin/hrts-cli-book"},"livereload":{},"splitter":{},"search-pro":{},"search":{},"page-copyright":{"wisdom":"Designer, Frontend Developer & overall web enthusiast","noPowered":false,"copyright":"Copyright &#169; 郝彬","style":"normal","timeColor":"#666","utcOffset":"8","format":"YYYY-MM-dd hh:mm:ss","signature":"haobin","copyrightColor":"#666","description":"modified at："},"popup":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"back-to-top-button":{},"pageview-count":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"haobin","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"hrts-cli-book","language":"zh-hans","gitbook":"*","description":"hrts-cli使用说明"},"file":{"path":"book/introduction.md","mtime":"2020-01-09T11:54:10.335Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-10T08:57:43.043Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"其他","level":"1.6","depth":1,"previous":{"title":"webpack配置","level":"1.5","depth":1,"path":"book/webpack/webpack.md","ref":"book/webpack/webpack.md","articles":[]},"dir":"ltr"},"config":{"plugins":["search-pro","github","chapter-fold","pageview-count","back-to-top-button","code","emphasize","splitter","popup","sectionx","livereload"],"styles":{"website":"./assets/styles/website.css"},"pluginsConfig":{"chapter-fold":{},"emphasize":{},"github":{"url":"https://github.com/Hbinbin/hrts-cli-book"},"livereload":{},"splitter":{},"search-pro":{},"search":{},"page-copyright":{"wisdom":"Designer, Frontend Developer & overall web enthusiast","noPowered":false,"copyright":"Copyright &#169; 郝彬","style":"normal","timeColor":"#666","utcOffset":"8","format":"YYYY-MM-dd hh:mm:ss","signature":"haobin","copyrightColor":"#666","description":"modified at："},"popup":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"back-to-top-button":{},"pageview-count":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"haobin","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"hrts-cli-book","language":"zh-hans","gitbook":"*","description":"hrts-cli使用说明"},"file":{"path":"book/other.md","mtime":"2020-01-10T09:23:20.113Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-10T08:57:43.043Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

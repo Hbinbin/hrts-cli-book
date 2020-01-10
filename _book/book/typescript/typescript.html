@@ -201,6 +201,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.6" data-path="../other.html">
+            
+                <a href="../other.html">
+            
+                    
+                    其他
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
 
@@ -279,16 +292,8 @@ declare module &apos;react-lazy-load&apos; {
   ele.addEventListener(&apos;touchmove&apos;, function(this: any,evt: any) {
     console.log(this);
   })
-</code></pre><h4 id="&#x5BF9;&#x8C61;&#x3001;&#x6570;&#x7EC4;&#x5BF9;&#x8C61;&#x7684;&#x8868;&#x793A;">&#x5BF9;&#x8C61;&#x3001;&#x6570;&#x7EC4;&#x5BF9;&#x8C61;&#x7684;&#x8868;&#x793A;</h4>
-<pre><code>  const obj: {
-    [key: string]: any
-  } = {}
-  const arrObj: {
-    [key: string]: any
-  }[] = []
-</code></pre><h4 id="setstate">setState</h4>
+</code></pre><h4 id="setstate&#x5982;&#x4F55;&#x5C5E;&#x6027;&#x540D;&#x8868;&#x8FBE;&#x5F0F;&#x8D4B;&#x503C;">setState&#x5982;&#x4F55;&#x5C5E;&#x6027;&#x540D;&#x8868;&#x8FBE;&#x5F0F;&#x8D4B;&#x503C;</h4>
 <pre><code>  interface IState{
-    property1: string;
   }
   type StateKey = keyof IState
   handleChange = (key: StateKey, val: any) =&gt; {
@@ -296,6 +301,13 @@ declare module &apos;react-lazy-load&apos; {
       [key]: val
     } as Pick&lt;IState, typeof key&gt;)
   }
+</code></pre><h4 id="&#x5BF9;&#x8C61;&#x3001;&#x6570;&#x7EC4;&#x5BF9;&#x8C61;&#x7684;&#x8868;&#x793A;">&#x5BF9;&#x8C61;&#x3001;&#x6570;&#x7EC4;&#x5BF9;&#x8C61;&#x7684;&#x8868;&#x793A;</h4>
+<pre><code>  const obj: {
+    [key: string]: any
+  } = {}
+  const arrObj: {
+    [key: string]: any
+  }[] = []
 </code></pre>
 <script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
                                 
@@ -356,7 +368,7 @@ declare module &apos;react-lazy-load&apos; {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"实用的typescript特性","level":"1.4","depth":1,"next":{"title":"webpack配置","level":"1.5","depth":1,"path":"book/webpack/webpack.md","ref":"book/webpack/webpack.md","articles":[]},"previous":{"title":"文件结构","level":"1.3.1","depth":2,"path":"book/template/file-structure.md","ref":"book/template/file-structure.md","articles":[]},"dir":"ltr"},"config":{"plugins":["search-pro","github","chapter-fold","pageview-count","back-to-top-button","code","emphasize","splitter","popup","sectionx","livereload"],"styles":{"website":"./assets/styles/website.css"},"pluginsConfig":{"chapter-fold":{},"emphasize":{},"github":{"url":"https://github.com/Hbinbin/hrts-cli-book"},"livereload":{},"splitter":{},"search-pro":{},"search":{},"page-copyright":{"wisdom":"Designer, Frontend Developer & overall web enthusiast","noPowered":false,"copyright":"Copyright &#169; 郝彬","style":"normal","timeColor":"#666","utcOffset":"8","format":"YYYY-MM-dd hh:mm:ss","signature":"haobin","copyrightColor":"#666","description":"modified at："},"popup":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"back-to-top-button":{},"pageview-count":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"haobin","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"hrts-cli-book","language":"zh-hans","gitbook":"*","description":"hrts-cli使用说明"},"file":{"path":"book/typescript/typescript.md","mtime":"2020-01-10T08:59:52.310Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-10T08:57:43.043Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"实用的typescript特性","level":"1.4","depth":1,"next":{"title":"webpack配置","level":"1.5","depth":1,"path":"book/webpack/webpack.md","ref":"book/webpack/webpack.md","articles":[]},"previous":{"title":"文件结构","level":"1.3.1","depth":2,"path":"book/template/file-structure.md","ref":"book/template/file-structure.md","articles":[]},"dir":"ltr"},"config":{"plugins":["search-pro","github","chapter-fold","pageview-count","back-to-top-button","code","emphasize","splitter","popup","sectionx","livereload"],"styles":{"website":"./assets/styles/website.css"},"pluginsConfig":{"chapter-fold":{},"emphasize":{},"github":{"url":"https://github.com/Hbinbin/hrts-cli-book"},"livereload":{},"splitter":{},"search-pro":{},"search":{},"page-copyright":{"wisdom":"Designer, Frontend Developer & overall web enthusiast","noPowered":false,"copyright":"Copyright &#169; 郝彬","style":"normal","timeColor":"#666","utcOffset":"8","format":"YYYY-MM-dd hh:mm:ss","signature":"haobin","copyrightColor":"#666","description":"modified at："},"popup":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"back-to-top-button":{},"pageview-count":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"haobin","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"hrts-cli-book","language":"zh-hans","gitbook":"*","description":"hrts-cli使用说明"},"file":{"path":"book/typescript/typescript.md","mtime":"2020-01-10T09:10:56.526Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-10T08:57:43.043Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

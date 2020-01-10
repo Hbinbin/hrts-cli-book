@@ -36,6 +36,17 @@ declare module 'react-lazy-load' {
     console.log(this);
   })
 ```
+#### setState如何属性名表达式赋值
+```
+  interface IState{
+  }
+  type StateKey = keyof IState
+  handleChange = (key: StateKey, val: any) => {
+    this.setState({
+      [key]: val
+    } as Pick<IState, typeof key>)
+  }
+```
 #### 对象、数组对象的表示
 ```
   const obj: {
@@ -44,16 +55,4 @@ declare module 'react-lazy-load' {
   const arrObj: {
     [key: string]: any
   }[] = []
-```
-#### setState
-```
-  interface IState{
-    property1: string;
-  }
-  type StateKey = keyof IState
-  handleChange = (key: StateKey, val: any) => {
-    this.setState({
-      [key]: val
-    } as Pick<IState, typeof key>)
-  }
 ```
