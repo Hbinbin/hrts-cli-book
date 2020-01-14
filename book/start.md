@@ -40,4 +40,4 @@ npm start
   },
 ```
 
-**注：{% em type="orange" %}配置完不生效时，请重启编辑器{% endem %} **
+**注：{% em type="orange" %}配置完不生效时，请重启编辑器、重启项目{% endem %} **
