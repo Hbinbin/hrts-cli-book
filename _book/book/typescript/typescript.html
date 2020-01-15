@@ -262,17 +262,29 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h3 id="typescript&#x7684;&#x57FA;&#x672C;&#x8BED;&#x6CD5;">TypeScript&#x7684;&#x57FA;&#x672C;&#x8BED;&#x6CD5;</h3>
-<h4 id="&#x5728;window&#x589E;&#x52A0;&#x5C5E;&#x6027;">&#x5728;window&#x589E;&#x52A0;&#x5C5E;&#x6027;</h4>
-<pre><code>// &#x65B9;&#x6CD5;1&#xFF1A;react-app-env.d.ts&#x4E2D;&#x76F4;&#x63A5;&#x589E;&#x52A0;window&#x7684;&#x63A5;&#x53E3;&#xFF08;&#x63A8;&#x8350;&#xFF09;
+                                <h2 id="typescript&#x7684;&#x5B9E;&#x7528;&#x8BED;&#x6CD5;">TypeScript&#x7684;&#x5B9E;&#x7528;&#x8BED;&#x6CD5;</h2>
+<h3 id="1-&#x5728;window&#x589E;&#x52A0;&#x5C5E;&#x6027;">1. &#x5728;window&#x589E;&#x52A0;&#x5C5E;&#x6027;</h3>
+<h4 id="&#x65B9;&#x6CD5;1&#xFF1A;&#x5728;srctypingsindexdts&#x6216;react-app-envdts&#x4E2D;&#x76F4;&#x63A5;&#x589E;&#x52A0;window&#x7684;&#x63A5;&#x53E3;&#xFF08;&#x63A8;&#x8350;&#xFF09;">&#x65B9;&#x6CD5;1&#xFF1A;&#x5728;<code>src/typings/index.d.ts</code>&#x6216;react-app-env.d.ts&#x4E2D;&#x76F4;&#x63A5;&#x589E;&#x52A0;window&#x7684;&#x63A5;&#x53E3;&#xFF08;&#x63A8;&#x8350;&#xFF09;</h4>
+<p><code>src/typings/index.d.ts</code></p>
+<pre><code>/// &lt;reference types=&quot;./config.d.ts&quot; /&gt;
+/// &lt;reference types=&quot;./common.d.ts&quot; /&gt;
+/// &lt;reference types=&quot;./api.d.ts&quot; /&gt;
+
+// &#x589E;&#x52A0;&#x6B64;Window&#x63A5;&#x53E3;&#xFF0C;&#x6B64;&#x65F6;&#x53EF;&#x901A;&#x8FC7;**window.Config**&#x8BBF;&#x95EE;
 interface Window {
   __REDUX_DEVTOOLS_EXTENSION__: Function;
-  __wxjs_environment: &apos;miniprogram&apos; | &apos;browser&apos;;
+  __wxjs_environment: any;
   ENV: any;
-  Config: any;
+  Config: IConfig;
 }
-// &#x65B9;&#x6CD5;2&#xFF1A;index.tsx&#x4E2D;&#x589E;&#x52A0;&#x5168;&#x5C40;window&#x5C5E;&#x6027;
-declare global {
+
+// &#x58F0;&#x660E;&#x5168;&#x5C40;&#x53D8;&#x91CF;Config&#xFF0C;&#x6B64;&#x65F6;&#x53EF;&#x76F4;&#x63A5;&#x901A;&#x8FC7; Config &#x8BBF;&#x95EE;
+declare const Config: IConfig;
+</code></pre><p>&#x5728;<code>src/index.tsx</code>&#x4E2D;&#x5F15;&#x5165;&#x5168;&#x5C40;&#x914D;&#x7F6E;&#xFF0C;&#x7ED9;<strong>Config</strong>&#x8D4B;&#x503C;</p>
+<pre><code>import &apos;@common/config&apos;; // &#x5168;&#x5C40;&#x914D;&#x7F6E;
+</code></pre><p><code>console.log(Config)</code>&#x76F4;&#x63A5;&#x5168;&#x5C40;&#x8BBF;&#x95EE;</p>
+<h4 id="&#x65B9;&#x6CD5;2&#xFF1A;srcindextsx&#x4E2D;&#x589E;&#x52A0;&#x5168;&#x5C40;window&#x58F0;&#x660E;">&#x65B9;&#x6CD5;2&#xFF1A;<code>src/index.tsx</code>&#x4E2D;&#x589E;&#x52A0;&#x5168;&#x5C40;<strong>window</strong>&#x58F0;&#x660E;</h4>
+<pre><code>declare global {
   interface Window {
     __REDUX_DEVTOOLS_EXTENSION__: Function;
     __wxjs_environment: any;
@@ -280,21 +292,21 @@ declare global {
     Config: any;
   }
 }
-</code></pre><h4 id="&#x5BF9;&#x4E8E;&#x63D2;&#x4EF6;&#x6CA1;&#x6709;ts&#x5305;&#x7684;">&#x5BF9;&#x4E8E;&#x63D2;&#x4EF6;&#x6CA1;&#x6709;ts&#x5305;&#x7684;</h4>
+</code></pre><h3 id="2-&#x5BF9;&#x4E8E;&#x63D2;&#x4EF6;&#x6CA1;&#x6709;ts&#x5305;&#x7684;">2. &#x5BF9;&#x4E8E;&#x63D2;&#x4EF6;&#x6CA1;&#x6709;ts&#x5305;&#x7684;</h3>
 <pre><code>// &#x5728;react-app-env.d.ts&#x4E2D;&#x589E;&#x52A0;
 declare module &apos;react-lazy-load&apos; {
   const LazyLoad: any
   export default LazyLoad
 }
-</code></pre><h4 id="&#x533F;&#x540D;&#x51FD;&#x6570;&#x7684;this">&#x533F;&#x540D;&#x51FD;&#x6570;&#x7684;this</h4>
-<p>&#x56DE;&#x8C03;&#x4E2D;&#x76F4;&#x63A5;&#x4F7F;&#x7528;this&#x4F1A;&#x62A5;&#x9519; &apos;this &#x9690;&#x5F0F;&#x5177;&#x6709;&#x7C7B;&#x578B; any&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x6CA1;&#x6709;&#x7C7B;&#x578B;&#x6CE8;&#x91CA;&apos;
-&#x65B9;&#x6CD5;1&#xFF1A;this&#x5FC5;&#x987B;&#x4F5C;&#x4E3A;&#x56DE;&#x8C03;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x4F20;&#x5165;&#xFF0C;&#x7C7B;&#x578B;&#x4E3A;&#xFF1A;void | any</p>
+</code></pre><h3 id="3-&#x533F;&#x540D;&#x51FD;&#x6570;&#x7684;this">3. &#x533F;&#x540D;&#x51FD;&#x6570;&#x7684;this</h3>
+<p>&#x56DE;&#x8C03;&#x4E2D;&#x76F4;&#x63A5;&#x4F7F;&#x7528;this&#x4F1A;&#x62A5;&#x9519; &apos;this &#x9690;&#x5F0F;&#x5177;&#x6709;&#x7C7B;&#x578B; any&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x6CA1;&#x6709;&#x7C7B;&#x578B;&#x6CE8;&#x91CA;&apos; </p>
+<p>&#x65B9;&#x6CD5;1&#xFF1A;this&#x5FC5;&#x987B;&#x4F5C;&#x4E3A;&#x56DE;&#x8C03;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x4F20;&#x5165;&#xFF0C;&#x7C7B;&#x578B;&#x4E3A;&#xFF1A;void | any</p>
 <pre><code>  ele.addEventListener(&apos;touchmove&apos;, function(this: any,evt: any) {
     console.log(this);
   })
 </code></pre><p>&#x65B9;&#x6CD5;2&#xFF1A;tsconfig.js&#x589E;&#x52A0;&#x914D;&#x7F6E;</p>
 <pre><code>&quot;noImplicitThis&quot;: false
-</code></pre><h4 id="setstate&#x5982;&#x4F55;&#x5C5E;&#x6027;&#x540D;&#x8868;&#x8FBE;&#x5F0F;&#x8D4B;&#x503C;">setState&#x5982;&#x4F55;&#x5C5E;&#x6027;&#x540D;&#x8868;&#x8FBE;&#x5F0F;&#x8D4B;&#x503C;</h4>
+</code></pre><h3 id="4-setstate&#x5982;&#x4F55;&#x4F7F;&#x7528;&#x5C5E;&#x6027;&#x540D;&#x8868;&#x8FBE;&#x5F0F;&#x8D4B;&#x503C;">4. setState&#x5982;&#x4F55;&#x4F7F;&#x7528;&#x5C5E;&#x6027;&#x540D;&#x8868;&#x8FBE;&#x5F0F;&#x8D4B;&#x503C;</h3>
 <pre><code>  interface IState{
   }
   type StateKey = keyof IState
@@ -303,7 +315,7 @@ declare module &apos;react-lazy-load&apos; {
       [key]: val
     } as Pick&lt;IState, typeof key&gt;)
   }
-</code></pre><h4 id="&#x5BF9;&#x8C61;&#x3001;&#x6570;&#x7EC4;&#x5BF9;&#x8C61;&#x7684;&#x8868;&#x793A;">&#x5BF9;&#x8C61;&#x3001;&#x6570;&#x7EC4;&#x5BF9;&#x8C61;&#x7684;&#x8868;&#x793A;</h4>
+</code></pre><h3 id="5-&#x5BF9;&#x8C61;&#x3001;&#x6570;&#x7EC4;&#x5BF9;&#x8C61;&#x7684;&#x8868;&#x793A;">5. &#x5BF9;&#x8C61;&#x3001;&#x6570;&#x7EC4;&#x5BF9;&#x8C61;&#x7684;&#x8868;&#x793A;</h3>
 <pre><code>  const obj: {
     [key: string]: any
   } = {}
@@ -370,7 +382,7 @@ declare module &apos;react-lazy-load&apos; {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"实用的typescript特性","level":"1.4","depth":1,"next":{"title":"webpack配置","level":"1.5","depth":1,"path":"book/webpack/webpack.md","ref":"book/webpack/webpack.md","articles":[]},"previous":{"title":"文件结构","level":"1.3.1","depth":2,"path":"book/template/file-structure.md","ref":"book/template/file-structure.md","articles":[]},"dir":"ltr"},"config":{"plugins":["search-pro","github","chapter-fold","pageview-count","back-to-top-button","code","emphasize","splitter","popup","sectionx","livereload"],"styles":{"website":"./assets/styles/website.css"},"pluginsConfig":{"chapter-fold":{},"emphasize":{},"github":{"url":"https://github.com/Hbinbin/hrts-cli-book"},"livereload":{},"splitter":{},"search-pro":{},"search":{},"page-copyright":{"wisdom":"Designer, Frontend Developer & overall web enthusiast","noPowered":false,"copyright":"Copyright &#169; 郝彬","style":"normal","timeColor":"#666","utcOffset":"8","format":"YYYY-MM-dd hh:mm:ss","signature":"haobin","copyrightColor":"#666","description":"modified at："},"popup":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"back-to-top-button":{},"pageview-count":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"haobin","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"hrts-cli-book","language":"zh-hans","gitbook":"*","description":"hrts-cli使用说明"},"file":{"path":"book/typescript/typescript.md","mtime":"2020-01-14T02:53:56.170Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-10T08:57:43.043Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"实用的typescript特性","level":"1.4","depth":1,"next":{"title":"webpack配置","level":"1.5","depth":1,"path":"book/webpack/webpack.md","ref":"book/webpack/webpack.md","articles":[]},"previous":{"title":"文件结构","level":"1.3.1","depth":2,"path":"book/template/file-structure.md","ref":"book/template/file-structure.md","articles":[]},"dir":"ltr"},"config":{"plugins":["search-pro","github","chapter-fold","pageview-count","back-to-top-button","code","emphasize","splitter","popup","sectionx","livereload"],"styles":{"website":"./assets/styles/website.css"},"pluginsConfig":{"chapter-fold":{},"emphasize":{},"github":{"url":"https://github.com/Hbinbin/hrts-cli-book"},"livereload":{},"splitter":{},"search-pro":{},"search":{},"page-copyright":{"wisdom":"Designer, Frontend Developer & overall web enthusiast","noPowered":false,"copyright":"Copyright &#169; 郝彬","style":"normal","timeColor":"#666","utcOffset":"8","format":"YYYY-MM-dd hh:mm:ss","signature":"haobin","copyrightColor":"#666","description":"modified at："},"popup":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"back-to-top-button":{},"pageview-count":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"haobin","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"hrts-cli-book","language":"zh-hans","gitbook":"*","description":"hrts-cli使用说明"},"file":{"path":"book/typescript/typescript.md","mtime":"2020-01-15T08:32:06.424Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-15T08:28:52.589Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

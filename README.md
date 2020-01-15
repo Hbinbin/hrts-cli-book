@@ -14,7 +14,7 @@
 [**standard-react**](https://github.com/standard/eslint-config-standard-react) 
 [**typescript-eslint**](https://github.com/typescript-eslint/typescript-eslint#readme)
 #### 2. webpack配置
-基本沿用 ```npm run eject```后的webpack配置，详细配置见：[`前言`章节](README.md)
+基本沿用 ```npm run eject```后的webpack配置，详细配置见：[`webpack配置`章节](./book/webpack/webpack.md)
 #### 3. 集成的插件
 + **antd/antd-mobile** UI框架  
 + **axios** HTTP库  

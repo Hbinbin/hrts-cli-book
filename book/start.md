@@ -20,7 +20,7 @@ npm i
 npm start
 ```
 ### 4.编辑器设置（vscode）
-代码保存自动修复的配置：修改vscode的配置文件 **settings.json**
+代码保存自动修复的配置：修改vscode的配置文件 `settings.json`
 ```
 // 增加需要自动修复的语言
   "eslint.validate": [
