@@ -9,5 +9,7 @@
 * [其他](book/other.md)
   * [代码分割与路由](book/other/react-lazy.md)
   * [vconsole](book/other/vconsole.md)
+  * [VSCode代码片段](book/other/VSCode-template.md)
+
 
 

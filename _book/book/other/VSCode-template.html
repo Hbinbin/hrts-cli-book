@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>vconsole · hrts-cli-book</title>
+        <title>VSCode代码片段 · hrts-cli-book</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -85,10 +85,8 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="VSCode-template.html" />
     
-    
-    <link rel="prev" href="react-lazy.html" />
+    <link rel="prev" href="vconsole.html" />
     
 
     </head>
@@ -228,7 +226,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.6.2" data-path="vconsole.html">
+        <li class="chapter " data-level="1.6.2" data-path="vconsole.html">
             
                 <a href="vconsole.html">
             
@@ -241,7 +239,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.3" data-path="VSCode-template.html">
+        <li class="chapter active" data-level="1.6.3" data-path="VSCode-template.html">
             
                 <a href="VSCode-template.html">
             
@@ -289,7 +287,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >vconsole</a>
+        <a href="../.." >VSCode代码片段</a>
     </h1>
 </div>
 
@@ -307,20 +305,100 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h3 id="vconsole&#x63D2;&#x4EF6;&#x7684;&#x4F7F;&#x7528;">vconsole&#x63D2;&#x4EF6;&#x7684;&#x4F7F;&#x7528;</h3>
-<p>&#x7528;&#x4E8E;&#x624B;&#x673A;&#x7AEF;H5&#x8C03;&#x8BD5;</p>
-<p>&#x5B89;&#x88C5;vconsole</p>
-<pre><code>npm i vconsole --save-dev
-</code></pre><p>&#x5728;&#x5165;&#x53E3;&#x6587;&#x4EF6;index.tsx&#x4E2D;import&#x4E14;&#x521B;&#x5EFA;vcosole&#x5B9E;&#x4F8B;</p>
-<pre><code>import VConsole from &apos;vconsole&apos;
-const vConsole = new VConsole()
-</code></pre><p>&#x5728;typescript&#x4E2D;&#x5F15;&#x5165;&#x4F1A;&#x62A5;&#x627E;&#x4E0D;&#x5230;&#x5BF9;&#x5E94;ts&#x7684;&#x6A21;&#x5757;&#xFF0C;&#x5728;react-app-env.d.ts&#x4E2D;&#x589E;&#x52A0;&#x5168;&#x5C40;&#x58F0;&#x660E;:  </p>
-<pre><code>declare module &apos;vconsole&apos;
-</code></pre><p>&#x76F4;&#x63A5;&#x4F7F;&#x7528;</p>
-<pre><code>&lt;script src=&quot;http://wechatfe.github.io/vconsole/lib/vconsole.min.js?v=3.2.0&quot;&gt;&lt;/script&gt;
-&lt;script&gt;
-    var vConsole = new VConsole();
-&lt;/script&gt;
+                                <h3 id="&#x7528;&#x4E8E;&#x5FEB;&#x901F;&#x521B;&#x5EFA;&#x7EC4;&#x4EF6;&#x6A21;&#x677F;">&#x7528;&#x4E8E;&#x5FEB;&#x901F;&#x521B;&#x5EFA;&#x7EC4;&#x4EF6;&#x6A21;&#x677F;</h3>
+<p>VSCode&#x8BBE;&#x7F6E;&#xFF1A;<code>&#x9996;&#x9009;&#x9879;</code>&gt;<code>&#x7528;&#x6237;&#x4EE3;&#x7801;&#x7247;&#x6BB5;</code>&gt;<code>&#x65B0;&#x5EFA;&#x5168;&#x5C40;&#x4EE3;&#x7801;&#x7247;&#x6BB5;&#x6587;&#x4EF6;</code></p>
+<h4 id="1-class&#x7EC4;&#x4EF6;">1. class&#x7EC4;&#x4EF6;</h4>
+<pre><code>{
+  &quot;react&quot;: {
+    &quot;prefix&quot;: &quot;react-class-ts&quot;,
+    &quot;body&quot;: [
+      &quot;import React, { Component } from &apos;react&apos;;&quot;,
+      &quot;import { connect } from &apos;react-redux&apos;;&quot;,
+      &quot;import { bindActionCreators, Dispatch } from &apos;redux&apos;;&quot;,
+      &quot;&quot;,
+      &quot;// interface&quot;,
+      &quot;interface IActions{ // redux&#x7684;action&#x96C6;&#x4E2D;&#x653E;&#x5728;&#x8FD9;&#x91CC;&quot;,
+      &quot;}&quot;,
+      &quot;interface IProps{&quot;,
+      &quot;  actions: IActions;&quot;,
+      &quot;}&quot;,
+      &quot;interface IState{&quot;,
+      &quot;}&quot;,
+      &quot;&quot;,
+      &quot;class Name extends Component&lt;IProps, IState&gt; {&quot;,
+      &quot;  constructor (props: IProps) {&quot;,
+      &quot;    super(props);&quot;,
+      &quot;  }&quot;,
+      &quot;  readonly state: IState = {&quot;,
+      &quot;  }&quot;,
+      &quot;  render () {&quot;,
+      &quot;    return (&quot;,
+      &quot;      &lt;div&gt;&quot;,
+      &quot;      &lt;/div&gt;&quot;,
+      &quot;    );&quot;,
+      &quot;  };&quot;,
+      &quot;}&quot;,
+      &quot;&quot;,
+      &quot;// connect&quot;,
+      &quot;const mapStateToProps = (state: any) =&gt; {&quot;,
+      &quot;  return {&quot;,
+      &quot;  };&quot;,
+      &quot;};&quot;,
+      &quot;const mapDispatchToProps = (dispatch: Dispatch) =&gt; {&quot;,
+      &quot;  return {&quot;,
+      &quot;    actions: bindActionCreators({}, dispatch)&quot;,
+      &quot;  };&quot;,
+      &quot;};&quot;,
+      &quot;export default connect(&quot;,
+      &quot;  mapStateToProps,&quot;,
+      &quot;  mapDispatchToProps&quot;,
+      &quot;)(Name);&quot;,
+      &quot;&quot;
+    ]
+  }
+}
+</code></pre><h3 id="2-hooks&#x7EC4;&#x4EF6;">2. hooks&#x7EC4;&#x4EF6;</h3>
+<pre><code>{
+  &quot;react&quot;: {
+    &quot;prefix&quot;: &quot;react-hooks-ts&quot;,
+    &quot;body&quot;: [
+      &quot;import React, { useState, useEffect } from &apos;react&apos;;&quot;,
+      &quot;import { connect } from &apos;react-redux&apos;;&quot;,
+      &quot;import { bindActionCreators, Dispatch } from &apos;redux&apos;;&quot;,
+      &quot;&quot;,
+      &quot;// interface&quot;,
+      &quot;interface IActions{ // redux&#x7684;action&#x96C6;&#x4E2D;&#x653E;&#x5728;&#x8FD9;&#x91CC;&quot;,
+      &quot;}&quot;,
+      &quot;interface IProps{&quot;,
+      &quot;  actions: IActions;&quot;,
+      &quot;}&quot;,
+      &quot;interface IState{&quot;,
+      &quot;}&quot;,
+      &quot;&quot;,
+      &quot;function Name (props: IProps) {&quot;,
+      &quot;  const state: IState = {&quot;,
+      &quot;  }&quot;,
+      &quot;  return (&quot;,
+      &quot;    &lt;div className=&apos;&apos;&gt;&quot;,
+      &quot;    &lt;/div&gt;&quot;,
+      &quot;  )&quot;,
+      &quot;}&quot;,
+      &quot;&quot;,
+      &quot;// connect&quot;,
+      &quot;const mapStateToProps = (state: any) =&gt; {&quot;,
+      &quot;  return {&quot;,
+      &quot;  }&quot;,
+      &quot;}&quot;,
+      &quot;const mapDispatchToProps = (dispatch: Dispatch) =&gt; {&quot;,
+      &quot;  return {&quot;,
+      &quot;    actions: bindActionCreators({}, dispatch)&quot;,
+      &quot;  }&quot;,
+      &quot;}&quot;,
+      &quot;export default connect(mapStateToProps, mapDispatchToProps)(Name)&quot;,
+      &quot;&quot;
+    ]
+  }
+}
 </code></pre>
 <script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
                                 
@@ -365,14 +443,10 @@ const vConsole = new VConsole()
 
             
                 
-                <a href="react-lazy.html" class="navigation navigation-prev " aria-label="Previous page: 代码分割与路由">
+                <a href="vconsole.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: vconsole">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="VSCode-template.html" class="navigation navigation-next " aria-label="Next page: VSCode代码片段">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -381,7 +455,7 @@ const vConsole = new VConsole()
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"vconsole","level":"1.6.2","depth":2,"next":{"title":"VSCode代码片段","level":"1.6.3","depth":2,"path":"book/other/VSCode-template.md","ref":"book/other/VSCode-template.md","articles":[]},"previous":{"title":"代码分割与路由","level":"1.6.1","depth":2,"path":"book/other/react-lazy.md","ref":"book/other/react-lazy.md","articles":[]},"dir":"ltr"},"config":{"plugins":["search-pro","github","chapter-fold","pageview-count","back-to-top-button","code","emphasize","splitter","popup","sectionx"],"styles":{"website":"./assets/styles/website.css"},"pluginsConfig":{"chapter-fold":{},"emphasize":{},"github":{"url":"https://github.com/Hbinbin/hrts-cli-book"},"splitter":{},"search-pro":{},"search":{},"page-copyright":{"wisdom":"Designer, Frontend Developer & overall web enthusiast","noPowered":false,"copyright":"Copyright &#169; 郝彬","style":"normal","timeColor":"#666","utcOffset":"8","format":"YYYY-MM-dd hh:mm:ss","signature":"haobin","copyrightColor":"#666","description":"modified at："},"popup":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"back-to-top-button":{},"pageview-count":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"haobin","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"hrts-cli-book","language":"zh-hans","gitbook":"*","description":"hrts-cli使用说明"},"file":{"path":"book/other/vconsole.md","mtime":"2020-01-16T03:20:26.001Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-16T06:13:55.742Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"VSCode代码片段","level":"1.6.3","depth":2,"previous":{"title":"vconsole","level":"1.6.2","depth":2,"path":"book/other/vconsole.md","ref":"book/other/vconsole.md","articles":[]},"dir":"ltr"},"config":{"plugins":["search-pro","github","chapter-fold","pageview-count","back-to-top-button","code","emphasize","splitter","popup","sectionx"],"styles":{"website":"./assets/styles/website.css"},"pluginsConfig":{"chapter-fold":{},"emphasize":{},"github":{"url":"https://github.com/Hbinbin/hrts-cli-book"},"splitter":{},"search-pro":{},"search":{},"page-copyright":{"wisdom":"Designer, Frontend Developer & overall web enthusiast","noPowered":false,"copyright":"Copyright &#169; 郝彬","style":"normal","timeColor":"#666","utcOffset":"8","format":"YYYY-MM-dd hh:mm:ss","signature":"haobin","copyrightColor":"#666","description":"modified at："},"popup":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"back-to-top-button":{},"pageview-count":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"haobin","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"hrts-cli-book","language":"zh-hans","gitbook":"*","description":"hrts-cli使用说明"},"file":{"path":"book/other/VSCode-template.md","mtime":"2020-01-16T06:02:11.494Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-16T06:13:55.742Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
