@@ -7,5 +7,7 @@
 * [实用的typescript特性](book/typescript/typescript.md)
 * [webpack配置](book/webpack/webpack.md)
 * [其他](book/other.md)
+  * [代码分割与路由](book/other/react-lazy.md)
+  * [vconsole](book/other/vconsole.md)
 
 

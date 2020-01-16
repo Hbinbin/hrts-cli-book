@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>webpack配置 · hrts-cli-book</title>
+        <title>vconsole · hrts-cli-book</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -85,10 +85,8 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../other.html" />
     
-    
-    <link rel="prev" href="../typescript/typescript.html" />
+    <link rel="prev" href="react-lazy.html" />
     
 
     </head>
@@ -188,9 +186,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.5" data-path="webpack.html">
+        <li class="chapter " data-level="1.5" data-path="../webpack/webpack.html">
             
-                <a href="webpack.html">
+                <a href="../webpack/webpack.html">
             
                     
                     webpack配置
@@ -215,9 +213,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.6.1" data-path="../other/react-lazy.html">
+        <li class="chapter " data-level="1.6.1" data-path="react-lazy.html">
             
-                <a href="../other/react-lazy.html">
+                <a href="react-lazy.html">
             
                     
                     代码分割与路由
@@ -228,9 +226,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.2" data-path="../other/vconsole.html">
+        <li class="chapter active" data-level="1.6.2" data-path="vconsole.html">
             
-                <a href="../other/vconsole.html">
+                <a href="vconsole.html">
             
                     
                     vconsole
@@ -276,7 +274,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >webpack配置</a>
+        <a href="../.." >vconsole</a>
     </h1>
 </div>
 
@@ -294,60 +292,20 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h3 id="1-&#x914D;&#x7F6E;&#x6A21;&#x5757;&#x7684;&#x522B;&#x540D;alias">1. &#x914D;&#x7F6E;&#x6A21;&#x5757;&#x7684;&#x522B;&#x540D;alias</h3>
-<p>&#x5728;<code>src/config/webpack.config.js</code>&#x4E2D;&#x589E;&#x52A0;&#x65B9;&#x6CD5;&#x548C;alias&#x914D;&#x7F6E;</p>
-<pre><code>const resolvePath = function (dir) {
-  return path.join(__dirname, &apos;..&apos;, dir)
-}
-...
-alias: {
-  // &#x589E;&#x52A0;&#x5982;&#x4E0B;&#x914D;&#x7F6E;
-  &apos;@cps&apos;: resolvePath(&apos;/src/components&apos;),
-  &apos;@redux&apos;: resolvePath(&apos;/src/redux&apos;),
-  &apos;@utils&apos;: resolvePath(&apos;/src/utils&apos;)
-}
-...
-</code></pre><p>&#x5728;<code>src/tscongfig.json</code>&#x6587;&#x4EF6;&#x4E2D;compilerOptions&#x4E2D;&#x52A0;&#x5982;&#x4E0B;&#x914D;&#x7F6E;</p>
-<pre><code>...
-&quot;baseUrl&quot;: &quot;src&quot;,
-&quot;paths&quot;: {
-  &quot;@cps/*&quot;: [
-    &quot;components/*&quot;
-  ],
-  &quot;@redux/*&quot;: [
-    &quot;redux/*&quot;
-  ],
-  &quot;@utils/*&quot;: [
-    &quot;utils/*&quot;
-  ]
-}
-</code></pre><h3 id="2-&#x914D;&#x7F6E;&#x591A;&#x9875;&#x9762;&#x5165;&#x53E3;">2. &#x914D;&#x7F6E;&#x591A;&#x9875;&#x9762;&#x5165;&#x53E3;</h3>
-<h3 id="3-webpack&#x751F;&#x4EA7;&#x6253;&#x5305;&#x53BB;&#x9664;console&#x3001;debugger">3. webpack&#x751F;&#x4EA7;&#x6253;&#x5305;&#x53BB;&#x9664;console&#x3001;debugger</h3>
-<p>webpack&#x4E4B;&#x524D;&#x7684;&#x6253;&#x5305;&#x538B;&#x7F29;&#x63D2;&#x4EF6;&#x662F;uglifyjs-webpack-plugin&#xFF0C;&#x73B0;&#x5728;&#x6362;&#x6210;&#x4E86;terser-webpack-plugin<br>&#x4FEE;&#x6539;&#x6587;&#x4EF6;&#xFF1A;<code>src/config/webpack.config.js</code></p>
-<pre><code>  new TerserPlugin({
-    terserOptions: {
-      ...somecode
-      compress: {
-        ecma: 5,
-        warnings: false,
-        comparisons: false,
-        inline: 2,
-        drop_debugger: true, // &#x53BB;&#x9664;&#x6240;&#x6709;&#x7684;debugger
-        drop_console: true // &#x53BB;&#x9664;&#x6240;&#x6709;&#x7684;console
-      },
-      ...somecode
-    },
-</code></pre><h3 id="4-webpack&#x6253;&#x5305;&#x53BB;&#x9664;map&#x6587;&#x4EF6;">4. webpack&#x6253;&#x5305;&#x53BB;&#x9664;.map&#x6587;&#x4EF6;</h3>
-<p>&#x4FEE;&#x6539;&#x6587;&#x4EF6;<code>src/config/webpack.config.js</code>&#x4E2D;&#x7684;devtool&#x914D;&#x7F6E;</p>
-<pre><code>devtool: isEnvProduction
-      ? shouldUseSourceMap
-        ? &apos;source-map&apos;
-        : false
-      : isEnvDevelopment &amp;&amp; &apos;cheap-module-source-map&apos;
-</code></pre><p>&#x6539;&#x4E3A;&#xFF1A;</p>
-<pre><code>devtool: isEnvProduction
-      ? false
-      : isEnvDevelopment &amp;&amp; &apos;cheap-module-source-map&apos;
+                                <h3 id="vconsole&#x63D2;&#x4EF6;&#x7684;&#x4F7F;&#x7528;">vconsole&#x63D2;&#x4EF6;&#x7684;&#x4F7F;&#x7528;</h3>
+<p>&#x7528;&#x4E8E;&#x624B;&#x673A;&#x7AEF;H5&#x8C03;&#x8BD5;</p>
+<p>&#x5B89;&#x88C5;vconsole</p>
+<pre><code>npm i vconsole --save-dev
+</code></pre><p>&#x5728;&#x5165;&#x53E3;&#x6587;&#x4EF6;index.tsx&#x4E2D;import&#x4E14;&#x521B;&#x5EFA;vcosole&#x5B9E;&#x4F8B;</p>
+<pre><code>import VConsole from &apos;vconsole&apos;
+const vConsole = new VConsole()
+</code></pre><p>&#x5728;typescript&#x4E2D;&#x5F15;&#x5165;&#x4F1A;&#x62A5;&#x627E;&#x4E0D;&#x5230;&#x5BF9;&#x5E94;ts&#x7684;&#x6A21;&#x5757;&#xFF0C;&#x5728;react-app-env.d.ts&#x4E2D;&#x589E;&#x52A0;&#x5168;&#x5C40;&#x58F0;&#x660E;:  </p>
+<pre><code>declare module &apos;vconsole&apos;
+</code></pre><p>&#x76F4;&#x63A5;&#x4F7F;&#x7528;</p>
+<pre><code>&lt;script src=&quot;http://wechatfe.github.io/vconsole/lib/vconsole.min.js?v=3.2.0&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+    var vConsole = new VConsole();
+&lt;/script&gt;
 </code></pre>
 <script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
                                 
@@ -392,14 +350,10 @@ alias: {
 
             
                 
-                <a href="../typescript/typescript.html" class="navigation navigation-prev " aria-label="Previous page: 实用的typescript特性">
+                <a href="react-lazy.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 代码分割与路由">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="../other.html" class="navigation navigation-next " aria-label="Next page: 其他">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -408,7 +362,7 @@ alias: {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"webpack配置","level":"1.5","depth":1,"next":{"title":"其他","level":"1.6","depth":1,"path":"book/other.md","ref":"book/other.md","articles":[{"title":"代码分割与路由","level":"1.6.1","depth":2,"path":"book/other/react-lazy.md","ref":"book/other/react-lazy.md","articles":[]},{"title":"vconsole","level":"1.6.2","depth":2,"path":"book/other/vconsole.md","ref":"book/other/vconsole.md","articles":[]}]},"previous":{"title":"实用的typescript特性","level":"1.4","depth":1,"path":"book/typescript/typescript.md","ref":"book/typescript/typescript.md","articles":[]},"dir":"ltr"},"config":{"plugins":["search-pro","github","chapter-fold","pageview-count","back-to-top-button","code","emphasize","splitter","popup","sectionx"],"styles":{"website":"./assets/styles/website.css"},"pluginsConfig":{"chapter-fold":{},"emphasize":{},"github":{"url":"https://github.com/Hbinbin/hrts-cli-book"},"splitter":{},"search-pro":{},"search":{},"page-copyright":{"wisdom":"Designer, Frontend Developer & overall web enthusiast","noPowered":false,"copyright":"Copyright &#169; 郝彬","style":"normal","timeColor":"#666","utcOffset":"8","format":"YYYY-MM-dd hh:mm:ss","signature":"haobin","copyrightColor":"#666","description":"modified at："},"popup":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"back-to-top-button":{},"pageview-count":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"haobin","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"hrts-cli-book","language":"zh-hans","gitbook":"*","description":"hrts-cli使用说明"},"file":{"path":"book/webpack/webpack.md","mtime":"2020-01-15T08:33:08.093Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-16T05:44:32.759Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"vconsole","level":"1.6.2","depth":2,"previous":{"title":"代码分割与路由","level":"1.6.1","depth":2,"path":"book/other/react-lazy.md","ref":"book/other/react-lazy.md","articles":[]},"dir":"ltr"},"config":{"plugins":["search-pro","github","chapter-fold","pageview-count","back-to-top-button","code","emphasize","splitter","popup","sectionx"],"styles":{"website":"./assets/styles/website.css"},"pluginsConfig":{"chapter-fold":{},"emphasize":{},"github":{"url":"https://github.com/Hbinbin/hrts-cli-book"},"splitter":{},"search-pro":{},"search":{},"page-copyright":{"wisdom":"Designer, Frontend Developer & overall web enthusiast","noPowered":false,"copyright":"Copyright &#169; 郝彬","style":"normal","timeColor":"#666","utcOffset":"8","format":"YYYY-MM-dd hh:mm:ss","signature":"haobin","copyrightColor":"#666","description":"modified at："},"popup":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"back-to-top-button":{},"pageview-count":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"haobin","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"hrts-cli-book","language":"zh-hans","gitbook":"*","description":"hrts-cli使用说明"},"file":{"path":"book/other/vconsole.md","mtime":"2020-01-16T03:20:26.001Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-16T05:44:32.759Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

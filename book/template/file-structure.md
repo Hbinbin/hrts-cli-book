@@ -103,7 +103,7 @@ typescript接口集中管理的文件夹
 
 具体的实用语法在[`实用的typescript特性`章节](../typescript/typescript.md)介绍  
 
-#### 方式1：通过模块的方式，全局访问接口
+#### 方式1：通过模块的方式，全局访问接口（推荐）
 `src/typings/api.d.ts`定义一个接口：
 ```
 interface IGetUserParams {
