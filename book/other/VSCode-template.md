@@ -42,13 +42,10 @@ VSCode设置：`首选项`>`用户代码片段`>`新建全局代码片段文件`
       "};",
       "const mapDispatchToProps = (dispatch: Dispatch) => {",
       "  return {",
-      "    actions: bindActionCreators({}, dispatch)",
+      "    actions: bindActionCreators({}, dispatch),",
       "  };",
       "};",
-      "export default connect(",
-      "  mapStateToProps,",
-      "  mapDispatchToProps",
-      ")(Name);",
+      "export default connect(mapStateToProps, mapDispatchToProps)(Name);",
       ""
     ]
   }
